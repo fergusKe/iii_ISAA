@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ISAA x NICHOL</title>
+    <link href="reset.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Cabin:400' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+        outline: none;
+    }
+    html, body {
+        width:100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .wrap {
+        height:1400px;
+        width:100%;
+        margin: 0 auto;
+        position:relative;
+        overflow: hidden;
+    }
+    #topbar {
+        width: 100%;
+        height: 8%;
+        position: fixed;
+        background: rgba(0, 0, 0, 1);
+        z-index: 800;
+    }
+    #topbar .logo_control {
+        position: absolute;
+        width:20%;
+        height: 100%;
+        left:45%;
+        cursor:pointer;
+        outline: none;
+    }
+    #topbar #logo {
+        margin:0px -65px;
+        top:-25%;
+        position: absolute;
+    }
+   
+    /*--------------------MENU------------------------*/
+    #topbar .menu_oc{
+            width:50px;
+            height:50px;
+            top: 0.5%;
+            left:0; 
+            background:#000; 
+            text-align: center;
+            position: absolute;
+            cursor: pointer;
+        }
+    #topbar .controltop_left{
+            width:40px;
+            height:5px;
+            background: #fff;
+            margin-top: 20px;
+            margin-left:5px;
+            transition:0.2s;
+        }
+
+    #topbar .menu_control:hover{
+
+            background: #555;
+            transition:0.5s;
+        }
+        
+
+    #topbar .controltop_left::before,.controltop_left::after{
+            content: "";
+            width:40px;
+            height:5px;
+            background: #fff;
+            display: block;
+            margin-top: 10px;
+            transition:0.2s;
+        }
+
+    #topbar .controltop_left::before{
+            transform:translatey(-13px);
+        }
+
+    #topbar .controltop_left::after{
+            transform:translatey(-2px);
+        }
+
+     #topbar .controltop_left.active{
+            background: transparent;
+        }
+
+    #topbar .controltop_left.active::before{
+            transform:translateY(0px) rotate(45deg);
+            -moz-transform:translateY(0px) rotate(45deg);
+            -webkit-transform:translateY(0px) rotate(45deg);
+            transition:0.2s;
+        }
+
+    #topbar .controltop_left.active::after{
+            transform:translateY(-15px) rotate(-45deg);
+            -moz-transform:translateY(-15px) rotate(-45deg);
+            -webkit-transform:translateY(-15px) rotate(-45deg);
+            transition:0.2s;
+        }
+
+    .menu_control.active{
+        left:0%;
+    }
+
+    .menu_text{
+        position: absolute;
+        color: #000;
+        left:64px;
+        width: 1px;
+        height: 20px;
+        top:5px;
+        transform: rotate(90deg);
+        transform-origin: left top 0;
+    }
+
+    .menu_text p{
+        font-size: 12px;
+        font-family: 'Cabin', sans-serif;
+        color:#fff;
+    }
+
+    .menu_text p.active{
+        opacity: 0;
+        transition:0.5s;
+    }
+
+    .menu_text_close{
+        position: absolute;
+        top:-100%;
+        left:15%;
+    }
+
+    .menu_text_close p{
+        font-size: 12px;
+        font-family: 'Cabin', sans-serif; 
+        color:#fff;
+    }
+
+    .menu_text_close.active{
+        top:80%;
+        transition:0.5s cubic-bezier(.17,.52,.82,1.29);
+    }
+
+    /*------------------MENU-----------------*/
+    nav .menu_control {
+        width:175px;
+        height:93%;
+        background-color: rgba(0, 0, 0, 0.7);
+        text-align: center;
+        position: absolute;
+        top: 3.7%;
+        left:-100%;
+        z-index: 100;
+        display: block;
+        border:1px solid #fff;
+        transition:1s;
+    }
+
+    nav .menu_control .color_bar{
+        width:25px;
+        height:50px;
+        left: 150px;
+        top:310px;
+        z-index: 100;
+        background: #f90;
+        position: absolute;
+
+    }
+
+    nav .menu_control li {
+        display: block;
+        position: relative;
+        margin-bottom:-17px; 
+        border-bottom:1px solid rgba(255, 255, 250, 0.7);
+       margin-top: 1px;
+        z-index: 99;
+    }
+
+    nav .menu_control li:nth-child(1){
+        margin-top:-15px;
+    }
+    nav .menu_control li a {
+        display: block;
+        color:#fff;
+        width:150px;
+        line-height:50px;
+        perspective:800px;
+        -moz-perspective:800px;
+        -webkit-perspective:800px;
+        z-index: 99; 
+    }
+    nav .menu_control li a:hover {
+        background: rgba(0, 0, 0, 0.5);
+        text-shadow:0px 0px 5px #fff;
+        color:#000;
+        transition:0.5s;
+    }
+    nav .menu_control li a span {
+        position: relative;
+        display: inline-block;
+        background-color: #000;
+        font-size: 16px;
+        width:100%;
+        color: #fff;
+        -webkit-transition: -webkit-transform 0.4s, background 0.4s;
+        -moz-transition: -moz-transform 0.4s, background 0.4s;
+        transition: transform 0.4s, background 0.4s;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transform-origin: 65% 100% -100px;
+        -moz-transform-origin: 65% 100% -100px;
+        transform-origin: 65% 100% -100px;
+        z-index: 99;
+    }
+    nav .menu_control li a span::before {
+        position:absolute;
+        top:0;
+        left:100%;
+        height:100%;
+        width:104%;
+        background-color: #fff;
+        color:#000;
+        display:block;
+        content:attr(data-hover);
+        -webkit-transition: background 0.3s;
+        -moz-transition: background 0.3s;
+        transition: background 0.3s;
+        -webkit-transform: rotateY(90deg);
+        -moz-transform: rotateY(90deg);
+        transform: rotateY(90deg);
+        -webkit-transform-origin: 0 100%;
+        -moz-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        pointer-events: none;
+        z-index: 99;
+    }
+
+    nav .menu_control a:hover span, nav .menu_control a:focus span {
+        background-color: #000;
+        transform:rotatey(-90deg);
+        -moz-transform:rotatey(-90deg);
+        -webkit-transform:rotatey(-90deg);
+    }
+    nav .menu_control a:hover span::before, nav .menu_control a:focus span::before{
+        background-color: #fff;
+        color:#000;
+    }
+   
+    @keyframes rotatemu {
+        form {
+            transform:rotatey(180deg);
+            opacity: 0;
+        }
+        to {
+            transform:rotatey(0deg);
+            opacity: 1;
+        }
+    }
+    @-moz-keyframes rotatemu {
+        0% {
+            transform:rotatey(180deg);
+            opacity: 0;
+        }
+        100% {
+            transform:rotatey(0deg);
+            opacity: 1;
+        }
+    }
+
+    /*----------------------------------------以上為topbar------------------------------------------------*/
+    .content {
+        position:relative;
+        width:100%;
+        height: 50%;
+        display: block;
+        top:5%;
+        background-image: url("image/map1-2.png");
+        background-size: cover;
+    }
+    .bodyDottedPatternImage {
+        font-size:64px;
+        background:#000 url('image/bg-pattern.gif') repeat;
+    }
+    .content h1 {
+        font-size:96px;
+        font-family:"微軟正黑體";
+        letter-spacing: 1px;
+    }
+   .content p {
+        font-size:14px;
+        font-family:"微軟正黑體";
+    }
+    .li_control span h2 {
+        position: relative;
+        font-family: 'Cabin', sans-serif;
+        top:350%;
+        left:-15%;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 32px;
+        color:#E74C4C;
+        letter-spacing:-2px;
+    }
+    .li_control .Taipei h2 {
+        left:-30%;
+    }
+    .view_map h3 {
+        font-size:20px;
+        font-family:"微軟正黑體";
+        color: #fff;
+        left: 22%;
+        top:16%;
+        position: absolute;
+        letter-spacing:10px;
+    }
+    .Taipei {
+        position:relative;
+        left:-5%;
+    }
+    .Taichung {
+        position:relative;
+        left:-3%;
+        transition:1.5s;
+    }
+    .Kaosiung {
+        left:0%;
+        position:relative;
+        transition:1.5s;
+    }
+    .Taichung_float {
+        left:-37%;
+        z-index:3;
+        transition:1s;
+    }
+    .Kaosiung_float {
+        left:-68%;
+        z-index:3;
+        transition:1s;
+    }
+  
+    .content .li_control {
+        position:relative;
+        width: 100%;
+        height: 50%;
+        text-align: center;
+    }
+    .content .li_control li {
+        position: relative;
+        top:23%;
+        width: 25%;
+        display: inline-block;
+        margin:auto 2%;
+    }
+    .content .li_control li span {
+        height:6%;
+        width:70%;
+        background: #000;
+        top:96.5%;
+        left: 23.5%;
+        position: absolute;
+    }
+    .content .li_control li .span2 {
+        left: 23.5%;
+        width:70%;
+    }
+    .content .li_control li .span3 {
+        left: 22.5%;
+        width:75%;
+    }
+    .view_map {
+        width: 90px;
+        height:40px;
+        background-color: #000;
+        position:absolute;
+        margin: 30px 0;
+        top:160%;
+        left: 27%;
+    }
+    .view_map_1 {
+        position:absolute;
+        left: 26%;
+    }
+    .content .li_control .info {
+        position: absolute;
+        margin: 50px 0;
+        top:225%;
+        left:25%;
+        letter-spacing: 1px;
+    }
+    .content .li_control .info .tel {
+        position: absolute;
+        letter-spacing: 4px;
+        background-color: rgba(255, 255, 255, 0);
+        left:0%;
+        margin-top: 10px;
+        border: none;
+        line-height: 36px;
+    }
+    .content .li_control .info .fax {
+        position: absolute;
+        letter-spacing: 4px;
+        background-color: rgba(255, 255, 255, 0);
+        top:200%;
+        left:0%;
+        margin-top: 20px;
+        border: none;
+        line-height: 36px;
+    }
+    .taipei_map {
+        top:3.7%;
+        left:30%;
+        position:absolute;
+        height:42.5%;
+        width:70%;
+        z-index:-4;
+        display: block;
+        background-color: #000;
+        opacity: 0;
+        transition:1s;
+    }
+    .taichung_map {
+        top:3.7%;
+        left:30%;
+        position:absolute;
+        height:42.5%;
+        width:70%;
+        z-index:-3;
+        display: block;
+        background-color: #000;
+        opacity: 0;
+        transition:1s;
+    }
+    .kaosiung_map {
+        top:3.7%;
+        left:30%;
+        position:absolute;
+        height:42.5%;
+        width:70%;
+        z-index:-3;
+        display: block;
+        background-color: #000;
+        opacity: 0;
+        transition:1s;
+    }
+    .show_map_control {
+        width:100%;
+        height:100%;
+        display: block;
+        z-index: 3;
+    }
+    .show_map_l1 {
+        opacity: 1;
+        z-index: 3;
+    }
+    .show_map_l2 {
+        opacity: 1;
+        z-index: 3;
+    }
+    .show_map_l3 {
+        opacity: 1;
+        z-index: 3;
+    }
+    .close_map {
+        width:40px;
+        height:40px;
+        position:absolute;
+        background:url("image/xx.png") 50% 50% rgba(255, 255, 255, 0.9);
+        border:3px solid #000;
+        z-index: 3;
+        top:0%;
+        left:93.7%;
+    }
+    </style>
+</head>
+
+<body class="bodyDottedPatternImage">
+    <div class="wrap">
+        <div class="header">
+            <div id="topbar">
+                <div class="logo_control" id="logo">
+                    <a href="javascript;:">
+                        <img src="image/logo2.png">
+                    </a>
+                </div>
+                <div class="menu_oc">
+                    <div class="controltop_left"></div>
+                    <div class="menu_text"><p>MENU</p></div>
+                    <div class="menu_text_close"><p>CLOSE</p></div>
+                </div>
+            </div>
+        <nav>
+            <ul class="menu_control">
+                <li>
+                    <a href="../index/index.html">
+                        <span data-hover="首頁">HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../about_us/about_us.html">
+                        <span data-hover="關於我們">ABOUT US</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../designer/designer.html">
+                        <span data-hover="設計師介紹">DESIGNER</span>
+                    </a>
+                </li>
+                <li class="link_1">
+                    <a href="../product/newcollection.html">
+                        <span data-hover="最新商品">NEW COLLECTION</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../product/shop.html">
+                        <span data-hover="線上商店">ONLINE STORE</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../custom_page/custom_page.html">
+                        <span data-hover="客製化">CUSTOM SUIT</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html">
+                        <span data-hover="聯絡我們">CONTACT US</span>
+                    </a>
+                </li>
+                <span class="color_bar"></span>
+            </ul>
+        </nav>
+        </div>
+        <div class="content">
+            <ul class="li_control">
+                <li class="Taipei">
+                    <h1>台北
+                        <span>
+                            <h2>TAIPEI</h2>
+                        </span>
+                    </h1>
+                    <div class="view_map view_map_1">
+                        <a href="javascript;:" class="show_map_control1">
+                            <h3>地圖</h3>
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p>台北市信義區松高路19號</br>
+                            <span class="tel">Tel:(02)8789-5599</span>
+                            <span class="fax">Fax:(02)8789-5588</span>
+                        </p>
+                    </div>
+                </li>
+                <li class="Taichung">
+                    <h1>台中
+                        <span class="span2">
+                            <h2>TAICHUNG</h2>
+                        </span>
+                    </h1>
+                    <div class="view_map view_map_2">
+                        <a href="#" class="show_map_control2">
+                            <h3>地圖</h3>
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p>台中市西屯區台灣大道三段301號</br>
+                            <span class="tel">Tel:(04)2255-3333</span>
+                            <span class="fax">Fax:(04)2255-3355</span>
+                        </p>
+                    </div>
+                </li>
+                <li class="Kaosiung">
+                    <h1>高雄
+                        <span class="span3">
+                            <h2>KAOSIUNG</h2>
+                        </span>
+                    </h1>
+                    <div class="view_map view_map_3">
+                        <a href="#" class="show_map_control3">
+                            <h3>地圖</h3>
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p>高雄市左營區高鐵路123號</br>
+                            <span class="tel">Tel:(07)346-9999</span>
+                            <span class="fax">Fax:(07)346-9998</span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="taipei_map" class="taipei_map">
+            <iframe class="reload_map1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.4225695079638!2d121.56702600000003!3d25.039329000000013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abbbb609d58f%3A0x81c400907ac5b9f7!2z5p2-6auY6LevMTnomZ8!5e0!3m2!1szh-TW!2stw!4v1400481040877" width="100%" height="100%" frameborder="0" style="border:0"></iframe>
+            <div class="close_map"></div>
+        </div>
+
+        <div id="taichung_map" class="taichung_map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1820.0929728639123!2d120.64414281782346!3d24.165210703894193!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d8cb07f2ed1%3A0x53716a7193e3406d!2z5Y-w54Gj5aSn6YGT5LiJ5q61MzAx6Jmf!5e0!3m2!1szh-TW!2stw!4v1400490513352" width="100%" height="100%" frameborder="0" style="border:0"></iframe>
+            <div class="close_map"></div>
+        </div>
+
+        <div id="kaosiung_map" class="kaosiung_map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1840.5366469860962!2d120.310124!3d22.688257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e056f8b12396b%3A0x5e6c12ef52d7adbf!2zODEz6auY6ZuE5biC5bem54ef5Y2A6auY6ZC16LevMTIz6Jmf!5e0!3m2!1szh-TW!2stw!4v1400492342566" width="100%" height="100%" frameborder="0" style="border:0"></iframe>
+            <div class="close_map"></div>
+        </div>
+    </div>
+
+
+</body>
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    $(".logo_control").click(
+        function(){
+        $(".logo_control a").attr({href:"../index/index.html"});
+            });
+
+      $(".menu_oc").click(
+        function(){
+        $(".menu_oc , .controltop_left , .menu_control ,.menu_text p,.menu_text_close").toggleClass("active");
+    });
+
+
+    $(".show_map_control1").click(
+        function() {
+            $("#taipei_map").addClass("show_map_l1");
+        });
+
+    $(".close_map").click(
+        function() {
+
+            $("#taipei_map").removeClass("show_map_l1");
+        });
+
+    $(".show_map_control2").click(
+        function() {
+            $("#taichung_map").addClass("show_map_l2");
+            $(".Taichung").addClass("Taichung_float");
+            $(".Taipei").css("opacity", 0);
+        });
+
+    $(".close_map").click(
+        function() {
+
+            $("#taichung_map").removeClass("show_map_l2");
+            $(".Taichung").removeClass("Taichung_float");
+            $(".Taipei").css("opacity", 1);
+        });
+
+    $(".show_map_control3").click(
+        function() {
+            $("#kaosiung_map").addClass("show_map_l3");
+            $(".Kaosiung").addClass("Kaosiung_float");
+            $(".Taipei").css("opacity", 0);
+        });
+
+    $(".close_map").click(
+        function() {
+
+            $("#kaosiung_map").removeClass("show_map_l3");
+            $(".Kaosiung").removeClass("Kaosiung_float");
+            $(".Taipei").css("opacity", 1);
+        });
+     $(".logo_control a").focus(function ()
+            {
+            this.blur();
+             });
+
+
+})
+</script>
+
+</html>

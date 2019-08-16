@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/about_us.css">
+<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<title>Untitled Document</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+<div id="topbar">
+                <div class="menu_oc">
+                    <div class="controltop_left"></div>
+                    <div class="menu_text"><p>MENU</p></div>
+                    <div class="menu_text_close"><p>CLOSE</p></div>
+                </div>
+                <div>
+                    <img src="images/logo_black.png" id="logo">
+                </div>
+               
+</div>
+        <nav>
+            <ul class="menu_control">
+                <li>
+                    <a href="../index/index.html">
+                        <span data-hover="首頁">HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../about_us/about_us.html">
+                        <span data-hover="關於我們">ABOUT US</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../designer/designer.html">
+                        <span data-hover="設計師介紹">DESIGNER</span>
+                    </a>
+                </li>
+                <li class="link_1">
+                    <a href="../product/newcollection.html">
+                        <span data-hover="最新商品">NEW COLLECTION</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../product/shop.html">
+                        <span data-hover="線上商店">ONLINE STORE</span>
+                    </a>
+                   
+                </li>
+                <li>
+                    <a href="../custom_page/custom_page.html">
+                        <span data-hover="客製化">CUSTOM SUIT</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../contact/contact.html">
+                        <span data-hover="聯絡我們">CONTACT US</span>
+                    </a>
+                </li>
+                <span class="color_bar"></span>
+            </ul>
+        </nav>
+<ul class="flip">
+	<li>
+    	<!-- <div class="pic"><img src="Penguins.jpg" height="200"></div> -->
+        <div class="txt0">
+        	<img src="images/about1.png" alt="">
+        	<br/>
+        	<h2>1987</h2>
+        	<hr/>
+        	<br/>
+        	<p><span>ISAAxNICHOL</span>品牌創立、帶動流行服飾的風潮</p>
+            <div class="next"></div>
+        </div>
+    </li>
+	<li>
+    	<!-- <div class="pic"><img src="Penguins.jpg" height="200"></div> -->
+        <div class="txt">
+        	<img src="images/about2.png" alt="">
+        	<h2>1993</h2>
+        	<hr/>
+        	<br/>
+        	<p>本公司大樓建立完成進入新的營運格局</p>
+            <div class="next"></div>
+        </div>
+    </li>
+	<li>
+    	<!-- <div class="pic"><img src="Penguins.jpg" height="200"></div> -->
+        <div class="txt">
+        	<img src="images/about3.png" alt="">
+        	<h2>1998</h2>
+        	<hr/>
+        	<br/>
+        	<p>服飾深受消費者喜愛，媒體邀約報導</p>
+            <div class="next"></div>
+        </div>
+    </li>
+	<li>
+    	<!-- <div class="pic"><img src="Penguins.jpg" height="200"></div> -->
+        <div class="txt">
+        	<img src="images/about4.png" alt="">
+        	<h2>2007</h2>
+        	<hr/>
+        	<br/>
+        	<p>公司為落實繁忙的業務量，添購生產器材</p>
+            <div class="next"></div>
+        </div>
+    </li>
+	<li>
+    	<!-- <div class="pic"><img src="Penguins.jpg" height="200"></div> -->
+        <div class="txt">
+        	<img src="images/about5.png" alt="">
+        	<h2>2011</h2>
+        	<hr/>
+        	<br/>
+        	<p>原材料採用“100％純羊絨”</p>
+            <div class="next"></div>
+        </div>
+    </li>
+	<li>
+    	<!-- <div class="pic"><img src="Penguins.jpg" height="200"></div> -->
+        <div class="txt">
+        	<img src="images/about6.png" alt="">
+        	<h2>2014</h2>
+        	<hr>
+        	<br>
+        	<p><span>ISAAxNICHOL</span>將持續保持認真、嚴謹的態度為客戶服務</p>
+            <div class="goTop"><span>Top</span></div>
+        </div>
+    </li>
+</ul>
+</body>
+<script src="js/jquery.1.9.0.min.js"></script>
+<script>
+$(function(){
+
+     $(".menu_oc").click(
+        function(){
+        $(".menu_oc , .controltop_left , .menu_control ,.menu_text p,.menu_text_close").toggleClass("active");
+    });
+
+
+	var scrollVal = $(this).scrollTop();
+	var liTop, li_scrol_diff;
+	var val = 0;
+    var sliderChange;
+    var sliderNext;
+    // var areaTop = $('#numberPage3').offset().top;
+    // var areaMove = areaTop - scrollVal;
+    scrollVal = $(this).scrollTop();
+	// console.log('scrollVal = ' + scrollVal);
+
+
+    // ===================Slider===================
+    //設定一個變數，變數內容是幻燈片中LI的數目，length為抓取數目的方法
+    var sliderCount = $('.flip li').length;
+    //設定一個變數抓取LI的寬度
+    var liWidth = $('.flip li').width();
+    //設定UL的寬度是LI的寬度*LI的數量
+    // $('.flip').css({width: liWidth*(sliderCount+1)});
+
+    //產出一組UL標籤並放到幻燈片內容的下方，作為幻燈片的控制條
+    $('.flip').append('<ul class="sliderBar"></ul>');
+    
+    //使用迴圈產出LI到幻燈片的控制條中
+    for(i = 0; i<sliderCount; i++){
+        $('.sliderBar').append('<li></li>');
+    }
+    
+    //設定一個變數當作索引值
+    var liIndex = 0;
+    
+    //讓第一個控制BAR的小圓點呈現作用中狀態
+    $('.sliderBar li').eq(liIndex).addClass('active');
+    
+    //設定當控制bar的li被點擊到時要做甚麼事
+    $('.sliderBar li').click(
+        function(){
+            //把變數liIndex設定為目前點擊到的li
+            liIndex = $(this).index();
+            
+            //設定幻燈片內容ul區塊要跑動畫，動畫是由左邊界來做計算，所以是跑負值
+            // $('.flip').stop().animate({top: -liIndex*700}, 500);
+            $('html,body').stop().animate({scrollTop: liIndex*700},500);
+            
+            //設定目前點擊到的控制Bar內的小圓點li要加上ACTIVE的CLASS，順便把其他的移除掉
+            $(this).addClass('active').siblings('li').removeClass('active');
+        }
+    )
+    
+
+
+    // ===================翻頁效果===================
+	$(window).scroll(function(){
+		scrollVal = $(this).scrollTop();
+		// console.log('scrollVal = ' + scrollVal);
+
+		$('.flip .txt').each(function(){
+			liTop = $(this).offset().top;
+			// console.log('liTop = ' + liTop);
+			li_scrol_diff = liTop - scrollVal;
+			if ( li_scrol_diff < 500){
+				$(this).css({
+				    '-moz-transform':'rotate('+val+'deg)',
+          			'-webkit-transform':'rotate('+val+'deg)',
+			          '-o-transform':'rotate('+val+'deg)',
+			          '-ms-transform':'rotate('+val+'deg)',
+			          'transform': 'rotate('+val+'deg)'
+				});
+			}
+		})
+        // ===================捲到哪個位置，slider要跟著更換===================
+        sliderChange = Math.floor( (scrollVal+200)/700 );  //在下一頁的上面一點點就切換slider
+            console.log('sliderChange = '+ sliderChange);
+            // console.log('scrollVal = ' + scrollVal);
+            $('.sliderBar li').eq(sliderChange).addClass('active').siblings('li').removeClass('active');
+	});
+
+        // ===================點擊下一頁===================
+        $('.next').click(function(){
+            sliderChange = Math.floor( scrollVal/700 );
+            sliderNext = sliderChange + 1;
+            // console.log('sliderNext = '+ sliderNext);
+            $('.sliderBar li').eq(sliderNext).addClass('active').siblings('li').removeClass('active');
+            $('html,body').stop().animate({scrollTop: sliderNext*700},500);
+        })
+        // ===================點擊回頂端===================
+        $('.goTop').click(function(){
+            sliderChange = Math.floor( scrollVal/700 );
+            sliderNext = sliderChange + 1;
+            // console.log('sliderNext = '+ sliderNext);
+            // $('.sliderBar li').eq(sliderNext).addClass('active').siblings('li').removeClass('active');
+            $('html,body').stop().animate({scrollTop: 0},1000);
+        })
+});
+
+
+
+</script>
+</html>

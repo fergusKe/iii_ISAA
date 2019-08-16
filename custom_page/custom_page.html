@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ISAA x NICHOL</title>
+    <link href='http://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+    <link href="reset.css" rel="stylesheet" type="text/css">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-decoration: none;
+        outline: none;
+    }
+    html,body{
+        width:100%;
+        overflow-x: hidden;
+    }
+    .wrap {
+        height:1400px;
+        width:100%;
+        margin: 0 auto;
+        position:relative;
+        background: #000;
+        background-image: url("image/bg_over_1680.jpg");
+       overflow: hidden;
+    }
+    #topbar {
+        width: 100%;
+        height: 8%;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 800;
+    }
+
+    #topbar .logo_control{
+        position: absolute;
+        width:20%;
+        height: 100%;
+        left:45%;
+        cursor:pointer;
+        outline: none;
+    }
+    #topbar #logo {
+        top:0%;
+        position: absolute;
+        outline: none;
+        margin: 1% -68px;
+    }
+
+    #topbar .menu_oc{
+            width:50px;
+            height:50px;
+            top: 0.5%;
+            left:0;  
+            text-align: center;
+            position: absolute;
+            cursor: pointer;
+        }
+    #topbar .controltop_left{
+            width:40px;
+            height:5px;
+            background: #fff;
+            margin-top: 20px;
+            margin-left:5px;
+            transition:0.2s;
+        }
+
+    #topbar .menu_control:hover{
+
+            background: #555;
+            transition:0.5s;
+        }
+        
+
+    #topbar .controltop_left::before,.controltop_left::after{
+            content: "";
+            width:40px;
+            height:5px;
+            background: #fff;
+            display: block;
+            margin-top: 10px;
+            transition:0.2s;
+        }
+
+    #topbar .controltop_left::before{
+            transform:translatey(-13px);
+        }
+
+    #topbar .controltop_left::after{
+            transform:translatey(-2px);
+        }
+
+     #topbar .controltop_left.active{
+            background: transparent;
+        }
+
+    #topbar .controltop_left.active::before{
+            transform:translateY(0px) rotate(45deg);
+            -moz-transform:translateY(0px) rotate(45deg);
+            -webkit-transform:translateY(0px) rotate(45deg);
+            transition:0.2s;
+        }
+
+    #topbar .controltop_left.active::after{
+            transform:translateY(-15px) rotate(-45deg);
+            -moz-transform:translateY(-15px) rotate(-45deg);
+            -webkit-transform:translateY(-15px) rotate(-45deg);
+            transition:0.2s;
+        }
+
+    /*------------------MENU-----------------*/
+     nav .menu_control {
+        width:175px;
+        height:91.5%;
+        background-color: rgba(0, 0, 0, 0.7);
+        text-align: center;
+        position: fixed;
+        top: 8%;
+        left:-100%;
+        z-index: 99;
+        display: block;
+        border:1px solid #fff;
+        transition:1s;
+    }
+
+     nav .menu_control .color_bar{
+        width:25px;
+        height:51px;
+        left: 150px;
+        top:260px;
+        z-index: 100;
+        background: #f90;
+        position: absolute;
+
+    }
+
+    .menu_control.active{
+        left:0%;
+    }
+
+    .menu_text{
+        position: absolute;
+        color: #000;
+        left:65px;
+        width: 1px;
+        height: 20px;
+        top:5px;
+        transform: rotate(90deg);
+        transform-origin: left top 0;
+    }
+
+    .menu_text p{
+        font-size: 12px;
+        font-family: 'Cabin', sans-serif;
+        color:#fff;
+        text-shadow:0 0 0;
+    }
+
+    .menu_text p.active{
+        opacity: 0;
+        transition:0.5s;
+    }
+
+    .menu_text_close{
+        position: absolute;
+        top:-100%;
+        left:15%;
+    }
+
+    .menu_text_close p{
+        font-size: 12px;
+        font-family: 'Cabin', sans-serif; 
+        color:#fff;
+        text-shadow:0 0 0;
+    }
+
+    .menu_text_close.active{
+        top:80%;
+        transition:0.5s cubic-bezier(.17,.52,.82,1.29);
+    }
+    nav .menu_control li {
+        display: block;
+        position: relative;
+        border-bottom:1px solid rgba(255,255,250,0.7);
+        margin-top: 1px;
+        z-index: 99;
+    }
+    nav .menu_control li a {
+        display: block;
+        color:#fff;
+        width:150px;
+        line-height:50px;
+        perspective:800px;
+        -moz-perspective:800px;
+        -webkit-perspective:800px;
+        z-index: 99;
+    }
+    nav .menu_control li a:hover{
+        background: rgba(255,255,255,0.5);
+        text-shadow:0 0 4px #fff;
+        color:#000;
+        transition:0.5s;
+    }
+    nav .menu_control li a span {
+        position: relative;
+        display: inline-block;
+        background-color: #000;
+        width:100%;
+        color: #fff;
+        -webkit-transition: -webkit-transform 0.4s, background 0.4s;
+        -moz-transition: -moz-transform 0.4s, background 0.4s;
+        transition: transform 0.4s, background 0.4s;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transform-origin: 65% 100% -100px;
+        -moz-transform-origin: 65% 100% -100px;
+        transform-origin: 65% 100% -100px;
+        z-index: 99;
+    }
+    nav .menu_control li a span::before {
+        position:absolute;
+        top:0;
+        left:100%;
+        height:100%;
+        width:104%;
+        background-color: #fff;
+        color:#000;
+        padding:0 0;
+        display:block;
+        content:attr(data-hover);
+        -webkit-transition: background 0.3s;
+        -moz-transition: background 0.3s;
+        transition: background 0.3s;
+        -webkit-transform: rotateY(90deg);
+        -moz-transform: rotateY(90deg);
+        transform: rotateY(90deg);
+        -webkit-transform-origin: 0 100%;
+        -moz-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        pointer-events: none;
+        z-index: 99;
+    }
+    nav .menu_control a:hover span, nav .menu_control a:focus span {
+        background-color: #000;
+        transform:rotatey(-90deg);
+        -moz-transform:rotatey(-90deg);
+        -webkit-transform:rotatey(-90deg);
+    }
+    nav .menu_control a:hover span::before, nav .menu_control a:focus span::before {
+        background-color: #fff;
+        color:#000;
+    }
+
+    @keyframes rotatemu {
+        form {
+            transform:rotatey(180deg);
+            opacity: 0;
+        }
+        to {
+            transform:rotatey(0deg);
+            opacity: 1;
+        }
+    }
+    @-moz-keyframes rotatemu {
+        0% {
+            transform:rotatey(180deg);
+            opacity: 0;
+        }
+        100% {
+            transform:rotatey(0deg);
+            opacity: 1;
+        }
+    }
+    
+    /*------------------------MENU---------------------*/
+    .slider {
+        margin:0 auto;
+        width:100%;
+        height: 92%;
+        position:relative;
+        top:3.5%;
+        overflow:hidden;
+    }
+    .slider_control {
+        position:relative;
+        left: 0;
+    }
+    .slider_control li {
+        float: left;
+       
+    }
+    .slider_bar {
+        width:100%;
+        height:15px;
+        position: absolute;
+        top:42%;
+        text-align: center;
+    }
+    .slider_bar li {
+        display:inline-block;
+        width:10px;
+        height:10px;
+        border-radius: 50%;
+        margin:5px;
+        background:#999;
+        list-style-type:none;
+    }
+    .slider_bar .active {
+        background:#FFF;
+    }
+    .content {
+        width:100%;
+        height: 50%;
+        top: 48%;
+        background: #000;
+        background-image: url("image/bg_over_1680.jpg");
+        position:absolute;
+    }
+    .content_l {
+        width:30%;
+        height: 100%;
+        background: #b55;
+        background-image: url("image/process1.jpg");
+        position: absolute;
+        left:2.5%;
+        background-size:cover;
+        text-align: center;
+        bottom:0%;
+    }
+
+    .content_l::before{
+        width:100%;
+        height:100%;
+        content:"";
+        left: 0;
+        position: absolute;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .content_c {
+        width:30%;
+        height: 100%;
+        background: #909;
+        background-image: url("image/designer1.jpg");
+        position: absolute;
+        left:35%;
+        background-size:cover;
+        text-align: center;
+        top:0%;
+    }
+    .content_c::before{
+        width:100%;
+        height:100%;
+        left: 0;
+        content:"";
+        position: absolute;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .content_r {
+        width:30%;
+        height: 100%;
+        background: #f55;
+        background-image: url("image/club1.jpg");
+        position: absolute;
+        right:2.5%;
+        background-size:cover;
+        text-align: center;
+        top:0%;
+    }
+    .content_r::before{
+        width:100%;
+        height:100%;
+        content:"";
+        left: 0;
+        position: absolute;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+
+    p{
+        color:#fff;
+        position: absolute;
+        top:30%;
+        font-weight:bolder;
+        text-shadow:0 0 15px #fff;
+        font-family: 'Cabin', sans-serif;
+    }
+
+    .p1{
+        position: absolute;
+        left:9.5%;
+    }
+    .p2{
+
+        position: absolute;
+        left:13%;}
+
+    .p3{
+        position: absolute;
+        left:6%;
+    }
+
+    .span1{
+
+        position: absolute;
+        left:7%;
+    }
+
+    .link{
+        width:100px;
+        height:25px;
+        background:rgba(255,255,255,0.5);
+        position: absolute;
+        left:35%;
+        top:70%;
+        box-shadow: 0px 0px 2px 2px #fff;
+    }
+
+    .link a{
+    	width: 100%;
+    	height:100%;
+        position: absolute;
+        top:15%;
+        left:0%;
+        color:#fff;
+        outline: none;
+    }
+
+    .sprite {
+        width:100px;
+        height:71px;
+        /*top:90%;
+        left: 25.5%;*/
+        margin:auto auto;
+        background: url('image/loader3.png') no-repeat;
+        animation:slice 4s;
+        -moz-animation:slice 4s;
+        -webkit-animation:slice 4s;
+        animation-timing-function:cubic-bezier(.36,-0.18,0,1.1);
+        -moz-animation-timing-function:cubic-bezier(.36,-0.18,0,1.1);
+        -webkit-animation-timing-function:cubic-bezier(.36,-0.18,0,1.1);
+        z-index: 999;
+        transform:rotate(-45deg);
+        position: absolute;
+    }
+        .loading {
+            position: fixed;
+            top: 0;
+            left: -49%;
+            width:100%;
+            height:100%;
+            background:rgb(249, 249, 249);
+            z-index: 998;
+            transform:skew(-45deg);
+            background-image: url("image/6-3.jpg");
+            animation:slide_l 3s 3s;
+        }
+        .loading2 {
+            position: fixed;
+            top: 0%;
+            left: 50%;
+            width:100%;
+            height:100%;
+            background:rgb(0, 0, 0);
+            z-index: 998;
+            transform:skew(-45deg);
+            background-image: url("image/6-3.jpg");
+            animation:slide_r 3s 3s;
+        }
+       
+        @keyframes loader {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 0 -220px;
+            }
+        }
+        @-moz-keyframes loader {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 0 -220px;
+            }
+        }
+        @-webkit-keyframes loader {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 0 -220px;
+            }
+        }
+
+         @keyframes slide_l {
+            from {
+                left:-50%;
+                opacity: 1;
+            }
+            to {
+                left:-150%;
+                opacity: 0;
+            }
+        }
+
+        @-moz-keyframes slide_l {
+            from {
+                left:-50%;
+                opacity: 1;
+            }
+            to {
+                left:-150%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes slide_r {
+            from {
+                left:50%;
+                opacity: 1;
+            }
+            to {
+                left:150%;
+                opacity: 0;
+            }
+        }
+
+        @-moz-keyframes slide_r {
+            from {
+                left:50%;
+                opacity: 1;
+            }
+            to {
+                left:150%;
+                opacity: 0;
+            }
+        }
+
+        @-moz-keyframes loader {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 0 -220px;
+            }
+        }
+        
+        @keyframes slice{
+            from{
+                top:90%;
+                left: 20%;
+            }
+            to{
+                top:-20%;
+                left: 76%;
+            }
+        }
+
+        @-moz-keyframes slice{
+            from{
+                top:90%;
+                left: 20%;
+            }
+            to{
+                top:-20%;
+                left: 76%;
+            }
+
+        }
+
+    </style>
+    <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+
+        var dd=function cleardiv(){
+            $(".loading").css("left","-1000%")
+            $(".loading2").css("left","1000%")
+            $(".sprite").css("left","1000%")
+        }
+
+        setTimeout(dd,3000)
+
+    })
+
+    </script>
+</head>
+
+<body>
+    <div class="loading"></div>
+    <div class="sprite"></div>
+    <div class="loading2"></div>
+    <div class="wrap">
+        <div class="header">
+            <div id="topbar">
+                <div class="logo_control" id="logo"><a href="../index/index.html"><img src="image/logo2.png"></a></div>
+                <div class="menu_oc">
+                    <div class="controltop_left"></div>
+                    <div class="menu_text"><p>MENU</p></div>
+                    <div class="menu_text_close"><p>CLOSE</p></div>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul class="menu_control">
+                <li>
+                    <a href="../index/index.html">
+                        <span data-hover="首頁">HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../about_us/about_us.html">
+                        <span data-hover="關於我們">ABOUT US</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../designer/designer.html">
+                        <span data-hover="設計師介紹">DESIGNER</span>
+                    </a>
+                </li>
+                <li class="link_1">
+                    <a href="../product/newcollection.html">
+                        <span data-hover="最新商品">NEW COLLECTION</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../product/shop.html">
+                        <span data-hover="線上商店">ONLINE STORE</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span data-hover="客製化">CUSTOM SUIT</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../contact/contact.html">
+                        <span data-hover="聯絡我們">CONTACT US</span>
+                    </a>
+                </li>
+                <span class="color_bar"></span>
+            </ul>
+        </nav>
+        <div class="slider">
+            <ul class="slider_control">
+                <li>
+                    <img src="image/custom1-2.jpg" width="1260" height="30%" background-size="cover">
+                </li>
+                <li>
+                    <img src="image/custom5-1.jpg" width="1260" height="30%" background-size="cover">
+                </li>
+                <li>
+                    <img src="image/custom8.jpg" width="1260" height="30%" background-size="cover">
+                </li>
+                <li>
+                    <img src="image/custom2.jpg" width="1260" height="30%" background-size="cover">
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="content_l">
+                <p class="p1">
+                —從最初的量體諮詢到最後的手工缝制—</br>
+                  <span class="span1">最终誕生出屬於您獨一無二的服装</span>
+                </p>
+                <div class="link content_llink"><a href="../process/process.html">Enter</a></div>
+            </div>
+            <div class="content_c">
+                <p class="p2">
+                —設計師精選最佳設計客製商品一覽—</br>
+                </p>
+                <div class="link content_clink"><a href="../lookbook/lookbook.html">Enter</a></div>
+            </div>
+            <div class="content_r">
+                <p class="p3">
+                —立即加入ISAA X NICHOL會員獨享尊榮待遇—</br>
+                </p>
+                <div class="link content_rlink"><a href="../club_page/club.html">Enter</a></div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+
+<script type="text/javascript">
+$(function() {
+	$(".logo_control a").focus(function ()
+            {
+            this.blur();
+             });
+
+    var li_length = $(".slider_control li").length;
+    var li_width = $(".slider_control li").width();
+    $(".slider_control").css({
+        width: li_width * (li_length + 1)
+    });
+    $(".slider").append('<ul class="slider_bar"></ul>');
+    for (i = 0; i < li_length; i++) {
+        $(".slider_bar").append("<li></li>");
+    };
+
+    var li_index = 0;
+    $(".slider_bar li").first().addClass("active");
+
+    $(".slider_bar li").click(function() {
+        li_index = $(this).index();
+        $(".slider_control").stop().animate({
+            left: -li_index * li_width
+        }, 500);
+        $(this).addClass('active').siblings('li').removeClass('active');
+    });
+
+    $('.slider_control').append(
+        $('.slider_control li').first().clone()
+    );
+
+    var sdplay = setInterval(sdgo, 3000);
+
+    function sdgo() {
+        $(".slider_control").stop().animate({
+            left: -li_index * li_width
+        }, 500);
+        $(".slider_bar li").eq(li_index).addClass("active").siblings("li").removeClass("active");
+        if (li_index < li_length) {
+            li_index++
+        } else {
+            $(".slider_bar li").eq(0).addClass("active").siblings("li").removeClass("active");
+            $(".slider_control").stop().animate({
+                left: -li_index * li_width
+            }, 500).animate({
+                left: 0
+            }, 0);
+            li_index = 1;
+        }
+    }
+
+    $(".logo_control").click(
+        function(){
+        $(".logo_control a").attr({href:"../index/index.html"});
+            })
+
+   
+    $(".menu_oc").click(
+        function(){
+        $(".menu_oc , .controltop_left , .menu_control ,.menu_text p,.menu_text_close").toggleClass("active");
+    });
+     
+})
+</script>
+</html>

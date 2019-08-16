@@ -1,0 +1,70 @@
+/* COMPILED CSS */
+
+/* Original file: global-master.less */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300);
+.bkgdCover{-webkit-background-size:100% 100%;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
+@-webkit-keyframes fade-in{from{opacity:0} to{opacity:1}}@-moz-keyframes fade-in{from{opacity:0} to{opacity:1}}@-ms-keyframes fade-in{from{opacity:0} to{opacity:1}}@-webkit-keyframes fade-out{from{opactiy:1} to{opactiy:0}}@-moz-keyframes fade-out{from{opactiy:1} to{opactiy:0}}@-ms-keyframes fade-out{from{opactiy:1} to{opactiy:0}}@-webkit-keyframes subnavi-slide-in{from{transform:translateY(-50px);-webkit-transform:translateY(-50px);-moz-transform:translateY(-50px);-ms-transform:translateY(-50px)} to{transform:translateY(0);-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0)}}@-moz-keyframes subnavi-slide-in{from{transform:translateY(-50px);-webkit-transform:translateY(-50px);-moz-transform:translateY(-50px);-ms-transform:translateY(-50px)} to{transform:translateY(0);-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0)}}@-ms-keyframes subnavi-slide-in{from{transform:translateY(-50px);-webkit-transform:translateY(-50px);-moz-transform:translateY(-50px);-ms-transform:translateY(-50px)} to{transform:translateY(0);-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0)}}@-webkit-keyframes subnavi-slide-out{from{transform:translateY(0);-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0)} to{transform:translateY(-50px);-webkit-transform:translateY(-50px);-moz-transform:translateY(-50px);-ms-transform:translateY(-50px)}}@-moz-keyframes subnavi-slide-out{from{transform:translateY(0);-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0)} to{transform:translateY(-50px);-webkit-transform:translateY(-50px);-moz-transform:translateY(-50px);-ms-transform:translateY(-50px)}}@-ms-keyframes subnavi-slide-out{from{transform:translateY(0);-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0)} to{transform:translateY(-50px);-webkit-transform:translateY(-50px);-moz-transform:translateY(-50px);-ms-transform:translateY(-50px)}}.icon{display:block;background-repeat:repeat;background-image:url(../../assets/imgs/awards/spritesheet-black.png);width:60px;height:60px}.icon.white{background-image:url(../../assets/imgs/awards/spritesheet-white.png)}
+.icon.icon-academy-awards{background-size:800% 800%;background-position:.33783783783783783% .33783783783783783%}
+.icon.icon-ad{background-size:800% 800%;background-position:14.527027027027026% .33783783783783783%}
+.icon.icon-ad-age{background-size:800% 800%;background-position:28.716216216216218% .33783783783783783%}
+.icon.icon-adc{background-size:800% 800%;background-position:42.9054054054054% .33783783783783783%}
+.icon.icon-adce{background-size:800% 800%;background-position:57.0945945945946% .33783783783783783%}
+.icon.icon-addys{background-size:800% 800%;background-position:71.28378378378379% .33783783783783783%}
+.icon.icon-adobe{background-size:800% 800%;background-position:85.47297297297297% .33783783783783783%}
+.icon.icon-adtech{background-size:800% 800%;background-position:.33783783783783783% 14.527027027027026%}
+.icon.icon-adweek{background-size:800% 800%;background-position:14.527027027027026% 14.527027027027026%}
+.icon.icon-aice{background-size:800% 800%;background-position:28.716216216216218% 14.527027027027026%}
+.icon.icon-aicp{background-size:800% 800%;background-position:42.9054054054054% 14.527027027027026%}
+.icon.icon-ana{background-size:800% 800%;background-position:57.0945945945946% 14.527027027027026%}
+.icon.icon-andys{background-size:800% 800%;background-position:71.28378378378379% 14.527027027027026%}
+.icon.icon-asc{background-size:800% 800%;background-position:85.47297297297297% 14.527027027027026%}
+.icon.icon-award{background-size:800% 800%;background-position:.33783783783783783% 28.716216216216218%}
+.icon.icon-awwwards{background-size:800% 800%;background-position:14.527027027027026% 28.716216216216218%}
+.icon.icon-big{background-size:800% 800%;background-position:28.716216216216218% 28.716216216216218%}
+.icon.icon-british-arrows{background-size:800% 800%;background-position:42.9054054054054% 28.716216216216218%}
+.icon.icon-cannes-lions{background-size:800% 800%;background-position:57.0945945945946% 28.716216216216218%}
+.icon.icon-clios{background-size:800% 800%;background-position:71.28378378378379% 28.716216216216218%}
+.icon.icon-communication-arts{background-size:800% 800%;background-position:85.47297297297297% 28.716216216216218%}
+.icon.icon-creativity{background-size:800% 800%;background-position:.33783783783783783% 42.9054054054054%}
+.icon.icon-design-licks{background-size:800% 800%;background-position:14.527027027027026% 42.9054054054054%}
+.icon.icon-dga{background-size:800% 800%;background-position:28.716216216216218% 42.9054054054054%}
+.icon.icon-emmy{background-size:800% 800%;background-position:42.9054054054054% 42.9054054054054%}
+.icon.icon-epica{background-size:800% 800%;background-position:57.0945945945946% 42.9054054054054%}
+.icon.icon-fitc{background-size:800% 800%;background-position:71.28378378378379% 42.9054054054054%}
+.icon.icon-fom{background-size:800% 800%;background-position:85.47297297297297% 42.9054054054054%}
+.icon.icon-fox{background-size:800% 800%;background-position:.33783783783783783% 57.0945945945946%}
+.icon.icon-fwa{background-size:800% 800%;background-position:14.527027027027026% 57.0945945945946%}
+.icon.icon-fwam{background-size:800% 800%;background-position:28.716216216216218% 57.0945945945946%}
+.icon.icon-glaad{background-size:800% 800%;background-position:42.9054054054054% 57.0945945945946%}
+.icon.icon-globe{background-size:800% 800%;background-position:57.0945945945946% 57.0945945945946%}
+.icon.icon-horizon{background-size:800% 800%;background-position:71.28378378378379% 57.0945945945946%}
+.icon.icon-huga-award{background-size:800% 800%;background-position:85.47297297297297% 57.0945945945946%}
+.icon.icon-lia{background-size:800% 800%;background-position:.33783783783783783% 71.28378378378379%}
+.icon.icon-mcm{background-size:800% 800%;background-position:14.527027027027026% 71.28378378378379%}
+.icon.icon-mobius{background-size:800% 800%;background-position:28.716216216216218% 71.28378378378379%}
+.icon.icon-mtv-o{background-size:800% 800%;background-position:42.9054054054054% 71.28378378378379%}
+.icon.icon-mtv-vma{background-size:800% 800%;background-position:57.0945945945946% 71.28378378378379%}
+.icon.icon-mvpa{background-size:800% 800%;background-position:71.28378378378379% 71.28378378378379%}
+.icon.icon-namic-emma{background-size:800% 800%;background-position:85.47297297297297% 71.28378378378379%}
+.icon.icon-new-york-festivals{background-size:800% 800%;background-position:.33783783783783783% 85.47297297297297%}
+.icon.icon-nytimes{background-size:800% 800%;background-position:14.527027027027026% 85.47297297297297%}
+.icon.icon-promax{background-size:800% 800%;background-position:28.716216216216218% 85.47297297297297%}
+.icon.icon-promo{background-size:800% 800%;background-position:42.9054054054054% 85.47297297297297%}
+.icon.icon-rushes{background-size:800% 800%;background-position:57.0945945945946% 85.47297297297297%}
+.icon.icon-shoot{background-size:800% 800%;background-position:71.28378378378379% 85.47297297297297%}
+.icon.icon-show{background-size:800% 800%;background-position:85.47297297297297% 85.47297297297297%}
+.icon.icon-sia{background-size:800% 800%;background-position:99.66216216216216% .33783783783783783%}
+.icon.icon-soundbutlers{background-size:800% 800%;background-position:99.66216216216216% 14.527027027027026%}
+.icon.icon-sxsw{background-size:800% 800%;background-position:99.66216216216216% 28.716216216216218%}
+.icon.icon-t1o2o3l4{background-size:800% 800%;background-position:99.66216216216216% 42.9054054054054%}
+.icon.icon-tech-crunch{background-size:800% 800%;background-position:99.66216216216216% 57.0945945945946%}
+.icon.icon-the-bessies{background-size:800% 800%;background-position:99.66216216216216% 71.28378378378379%}
+.icon.icon-the-mark-awards{background-size:800% 800%;background-position:99.66216216216216% 85.47297297297297%}
+.icon.icon-the-one-show{background-size:800% 800%;background-position:.33783783783783783% 99.66216216216216%}
+.icon.icon-the-webby-awards{background-size:800% 800%;background-position:14.527027027027026% 99.66216216216216%}
+.icon.icon-time{background-size:800% 800%;background-position:28.716216216216218% 99.66216216216216%}
+.icon.icon-welovead{background-size:800% 800%;background-position:42.9054054054054% 99.66216216216216%}
+.icon.icon-wma{background-size:800% 800%;background-position:57.0945945945946% 99.66216216216216%}
+.icon.icon-yda{background-size:800% 800%;background-position:71.28378378378379% 99.66216216216216%}
+@font-face{font-family:'TrumpGothicEastBold';src:url('../../assets/fonts/trump_bold/TrumpGotEasBol-webfont.eot');src:url('../../assets/fonts/trump_bold/TrumpGotEasBol-webfont.eot?iefix') format('eot'),url('../../assets/fonts/trump_bold/TrumpGotEasBol-webfont.woff') format('woff'),url('../../assets/fonts/trump_bold/TrumpGotEasBol-webfont.ttf') format('truetype'),url('../../assets/fonts/trump_bold/TrumpGotEasBol-webfont.svg#webfontca5KkFOq') format('svg');font-weight:normal;font-style:normal}@font-face{font-family:'TrumpGothicEastMedium';src:url('../../assets/fonts/trump_medium/TrumpGotEasMed-webfont.eot');src:url('../../assets/fonts/trump_medium/TrumpGotEasMed-webfont.eot?iefix') format('eot'),url('../../assets/fonts/trump_medium/TrumpGotEasMed-webfont.woff') format('woff'),url('../../assets/fonts/trump_medium/TrumpGotEasMed-webfont.ttf') format('truetype'),url('../../assets/fonts/trump_medium/TrumpGotEasMed-webfont.svg#webfont9JD8bKhs') format('svg');font-weight:normal;font-style:normal}@font-face{font-family:'TrumpGothicEastRegular';src:url('../../assets/fonts/trump_regular/TrumpGotEasReg-webfont.eot');src:url('../../assets/fonts/trump_regular/TrumpGotEasReg-webfont.eot?iefix') format('eot'),url('../../assets/fonts/trump_regular/TrumpGotEasReg-webfont.woff') format('woff'),url('../../assets/fonts/trump_regular/TrumpGotEasReg-webfont.ttf') format('truetype'),url('../../assets/fonts/trump_regular/TrumpGotEasReg-webfont.svg#webfontbqAut62J') format('svg');font-weight:normal;font-style:normal}@font-face{font-family:'LetterGothicStd';src:url('../../assets/fonts/letter_gothic/lettergothicstd.eot');src:url('../../assets/fonts/letter_gothic/lettergothicstd.eot?#iefix') format('embedded-opentype'),url('../../assets/fonts/letter_gothic/lettergothicstd.woff') format('woff'),url('../../assets/fonts/letter_gothic/lettergothicstd.ttf') format('truetype'),url('../../assets/fonts/letter_gothic/lettergothicstd.svg#lettergothicstd') format('svg');font-weight:normal;font-style:normal}@font-face{font-family:'LetterGothicStd-Bold';src:url('../../assets/fonts/letter_gothic/lettergothicstdbold.eot');src:url('../../assets/fonts/letter_gothic/lettergothicstdbold.eot?#iefix') format('embedded-opentype'),url('../../assets/fonts/letter_gothic/lettergothicstdbold.woff') format('woff'),url('../../assets/fonts/letter_gothic/lettergothicstdbold.ttf') format('truetype'),url('../../assets/fonts/letter_gothic/lettergothicstdbold.svg#lettergothicstdbold') format('svg');font-weight:normal;font-style:normal}@font-face{font-family:'LetterGothicStd-BoldSlanted';src:url('../../assets/fonts/letter_gothic/lettergothicstdboldslanted.eot');src:url('../../assets/fonts/letter_gothic/lettergothicstdboldslanted.eot?#iefix') format('embedded-opentype'),url('../../assets/fonts/letter_gothic/lettergothicstdboldslanted.woff') format('woff'),url('../../assets/fonts/letter_gothic/lettergothicstdboldslanted.ttf') format('truetype'),url('../../assets/fonts/letter_gothic/lettergothicstdboldslanted.svg#lettergothicstdboldslanted') format('svg');font-weight:normal;font-style:normal}@font-face{font-family:'LetterGothicStd-Slanted';src:url('../../assets/fonts/letter_gothic/lettergothicstdslanted.eot');src:url('../../assets/fonts/letter_gothic/lettergothicstdslanted.eot?#iefix') format('embedded-opentype'),url('../../assets/fonts/letter_gothic/lettergothicstdslanted.woff') format('woff'),url('../../assets/fonts/letter_gothic/lettergothicstdslanted.ttf') format('truetype'),url('../../assets/fonts/letter_gothic/lettergothicstdslanted.svg#lettergothicstdslanted') format('svg');font-weight:normal;font-style:normal}
+

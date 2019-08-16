@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="multizoom.css" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script type="text/javascript" src="multizoom.js">
+    </script>
+
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+
+        $('#multizoom1').addimagezoom({ // multi-zoom: options same as for previous Featured Image Zoomer's addimagezoom unless noted as '- new'
+            descArea: '#description', // description selector (optional - but required if descriptions are used) - new
+            speed: 600, // duration of fade in for new zoomable images (in milliseconds, optional) - new
+            // descpos: true, // if set to true - description position follows image position at a set distance, defaults to false (optional) - new
+            // imagevertcenter: true, // zoomable image centers vertically in its container (optional) - new
+            // magvertcenter: true, // magnified area centers vertically in relation to the zoomable image (optional) - new
+            zoomrange: [2, 10],
+            magnifiersize: [250, 250],
+            magnifierpos: 'left',
+            cursorshadecolor: '#fdffd5',
+            cursorshade: true //<-- No comma after last option!
+        });
+
+        $('#multizoom2').addimagezoom({ // multi-zoom: options same as for previous Featured Image Zoomer's addimagezoom unless noted as '- new'
+            descArea: '#description', // description selector (optional - but required if descriptions are used) - new
+            speed: 600, // duration of fade in for new zoomable images (in milliseconds, optional) - new
+            // descpos: true, // if set to true - description position follows image position at a set distance, defaults to false (optional) - new
+            // imagevertcenter: true, // zoomable image centers vertically in its container (optional) - new
+            // magvertcenter: true, // magnified area centers vertically in relation to the zoomable image (optional) - new
+            // zoomrange: [2, 10],
+            // magnifiersize: [250, 250],
+            magnifierpos: 'right',
+            cursorshadecolor: '#fdffd5',
+            cursorshade: true //<-- No comma after last option!
+        });
+
+    })
+    </script>
+    <link href="reset.css" rel="stylesheet" type="text/css">
+    <link href="multizoom.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    html {
+        overflow-x:hidden;
+    }
+    body {
+        background: #000;
+        overflow-y:hidden;
+    }
+    .wrapper {
+        height:1400px;
+        width:100%;
+        margin: 0 auto;
+        background: #000;
+        background-image: url("images/bg_over_1680.jpg");
+        /*overflow-x:hidden;*/
+    }
+    /*--------------------TOP BAR & MENU---------------*/
+    #topbar {
+        top: 0%;
+        width: 100%;
+        height: 8%;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 100;
+    }
+    #topbar #logo {
+        margin: -0.5% 600px;
+        position: absolute;
+        display: inline-block;
+    }
+    /*--------------------MENU------------------------*/
+    #topbar .controltop_left {
+        height:100%;
+        z-index: 2;
+        position: absolute;
+        top:0;
+        background:url("images/leftbar.png") 0 40% rgba(0, 0, 0, 0.5) no-repeat;
+        left: 0;
+        width:4%;
+    }
+    nav .menu_control {
+        width:150px;
+        height:91.5%;
+        background-color: rgba(0, 0, 0, 0.7);
+        text-align: center;
+        position: absolute;
+        top: 8%;
+        left:-100%;
+        z-index: 99;
+        display: block;
+        border:1px solid #fff;
+        transition:1s;
+    }
+    nav .menu_control li {
+        display: block;
+        position: relative;
+        border-bottom:1px solid rgba(255, 255, 250, 0.7);
+        margin-top: 1px;
+        z-index: 99;
+    }
+    nav .menu_control li a {
+        display: block;
+        color:#fff;
+        width:150px;
+        line-height:50px;
+        perspective:800px;
+        -moz-perspective:800px;
+        -webkit-perspective:800px;
+        z-index: 99;
+        outline: none;
+    }
+    nav .menu_control li a span {
+        position: relative;
+        display: inline-block;
+        background-color: #000;
+        width:100%;
+        color: #fff;
+        -webkit-transition: -webkit-transform 0.4s, background 0.4s;
+        -moz-transition: -moz-transform 0.4s, background 0.4s;
+        transition: transform 0.4s, background 0.4s;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transform-origin: 65% 100% -100px;
+        -moz-transform-origin: 65% 100% -100px;
+        transform-origin: 65% 100% -100px;
+        z-index: 99;
+    }
+    nav .menu_control li a span::before {
+        position:absolute;
+        top:0;
+        left:100%;
+        height:100%;
+        width:104%;
+        background-color: #fff;
+        color:#000;
+        padding:0 0;
+        display:block;
+        content:attr(data-hover);
+        -webkit-transition: background 0.3s;
+        -moz-transition: background 0.3s;
+        transition: background 0.3s;
+        -webkit-transform: rotateY(90deg);
+        -moz-transform: rotateY(90deg);
+        transform: rotateY(90deg);
+        -webkit-transform-origin: 0 100%;
+        -moz-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        pointer-events: none;
+        z-index: 99;
+    }
+    nav .menu_control a:hover span, nav .menu_control a:focus span {
+        background-color: #000;
+        transform:rotatey(-90deg);
+        -moz-transform:rotatey(-90deg);
+        -webkit-transform:rotatey(-90deg);
+    }
+    nav .menu_control a:hover span::before, nav .menu_control a:focus span::before {
+        background-color: #fff;
+        color:#000;
+    }
+    .submenu_control {
+        position: absolute;
+        /*background-color: #f56;*/
+        width:100%;
+        height:50px;
+        top:0;
+        left:-100%;
+        visibility:hidden;
+        transition:0.3s 0.3s;
+        z-index: 1;
+        display: block;
+    }
+    .menu_control li:hover .submenu_control {
+        visibility:visible;
+        perspective:800px;
+        -webkit-perspective:800px;
+        -moz-perspective:800px;
+        animation:rotatemu 1.5s;
+        -moz-animation:rotatemu 1.5s;
+        transform-origin:0% 50%;
+        -moz-transform-origin:0% 50%;
+        -moz-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    nav .menu_control li .submenu_control li {
+        position: relative;
+        float: left;
+        left:300px;
+        width:150px;
+        height:50px;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+        margin-top:0px;
+    }
+    .submenu_control li a {
+        /*position: absolute;*/
+        /*line-height: 50px;*/
+        border: 1px solid rgba(124, 113, 107, 1);
+    }
+    @keyframes rotatemu {
+        form {
+            transform:rotatey(180deg);
+            opacity: 0;
+        }
+        to {
+            transform:rotatey(0deg);
+            opacity: 1;
+        }
+    }
+    @-moz-keyframes rotatemu {
+        0% {
+            transform:rotatey(180deg);
+            opacity: 0;
+        }
+        100% {
+            transform:rotatey(0deg);
+            opacity: 1;
+        }
+    }
+    #topbar #rightbar {
+        margin: -1% 95%;
+        position: absolute;
+        display: block;
+    }
+    /*------------------------MENU---------------------*/
+    /*--------------------TOP BAR & MENU---------------*/
+    .container_l {
+        width:30%;
+        height:43%;
+        float: left;
+        top:3.5%;
+        background-color: #999;
+        position:relative;
+    }
+    .container_r {
+        width:30%;
+        height:43%;
+        float: right;
+        top:3.5%;
+        background-color: #568;
+        position:relative;
+        /*content: attr(data-large);*/
+    }
+    .container_c{
+        width:40%;
+        height:100%;
+    }
+    .content_1 {
+        width:100%;
+        height:20%;
+        float: left;
+        top:0%;
+        background-color: #f90;
+        position:absolute;
+    }
+    .content_1_tl {
+        position:absolute;
+        top:0;
+        left:50%;
+        width: 25%;
+        height:50%;
+        background-color: #254;
+    }
+    .content_1_tr {
+        position:absolute;
+        top:0;
+        left:75%;
+        width: 25%;
+        height:50%;
+        background-color: #333;
+    }
+    .content_1_bl {
+        position:absolute;
+        top:50%;
+        left:50%;
+        width: 25%;
+        height:50%;
+        background-color: #333;
+    }
+    .content_1_br {
+        position:absolute;
+        top:50%;
+        left:75%;
+        width: 25%;
+        height:50%;
+        background-color: #254;
+    }
+    .targetarea {
+        position: absolute;
+        left:0;
+        top:0;
+        width:50%;
+        height:100%;
+        background-color: #251;}
+
+    #small_show{
+        width:200px;
+        height:100px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div id="topbar">
+                <div>
+                    <img src="images/logo1.png" id="logo">
+                </div>
+                <div class="controltop_left"></div>
+                <img src="images/rightbar.png" id="rightbar">
+            </div>
+            <div id="newco"></div>
+        </div>
+        <nav>
+            <ul class="menu_control">
+                <li class="link_1">
+                    <a href="">
+                        <span data-hover="最新商品">NEW COLLECTION</span>
+                    </a>
+                    <ul class="submenu_control">
+                        <li><a href="">2013 Winter</a>
+                        </li>
+                        <li><a href="">2013 Spring</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">
+                        <span data-hover="最新活動">CAMPAIGN</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span data-hover="線上商店">ONLINE STORE</span>
+                    </a>
+                    <ul class="submenu_control">
+                        <li><a href="">Tops</a>
+                        </li>
+                        <li><a href="">Bottom</a>
+                        </li>
+                        <li><a href="">Bag&Shoe</a>
+                        </li>
+                        <li><a href="">Accessory</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">
+                        <span data-hover="客製化">CUSTOM SUIT</span>
+                    </a>
+                    <ul class="submenu_control">
+                        <li><a href="">Process</a>
+                        </li>
+                        <li><a href="">Designer</a>
+                        </li>
+                        <li><a href="">Club</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../contact/contact.html">
+                        <span data-hover="聯絡我們">CONTACT US</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="container_r">
+           <!--  <div id="small_show" class="multizoom1 thumbs">
+                    <a href="images/image-big-1.jpg" data-large="images/custom6.jpg" data-title="cloth1">
+                        <img src="images/image-small.jpg" alt="small" title="" />
+                    </a>
+            </div>
+            <div id="small_show" class="multizoom1 thumbs">
+                    <a href="images/cloth1.jpg" data-large="images/cloth1.jpg" data-title="cloth1">
+                        <img src="images/image-small.jpg" alt="small" title="" />
+                    </a> -->
+            <!-- </div> -->
+        </div>
+        <div class="container_l">
+
+            
+                <div class="content_1">
+                <!-- <div class="targetarea">
+                    <img id="multizoom1" alt="zoomable" title="" src="images/image-big-1.jpg"/>
+                </div> -->
+                </div>
+                
+               <!--  <div class="targetarea">
+                    <img id="multizoom2" alt="zoomable" title="" src="images/image-big.jpg"/>
+                </div> -->
+                
+            
+            <div class="content_2"></div>
+            <div class="content_3"></div>
+            <div class="content_4"></div>
+            <div class="content_5"></div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/Multi-Zoom.js"></script>
+<script type="text/javascript">
+$(function() {
+
+    var leftclick = 0;
+
+    $(".controltop_left").click(
+        function() {
+            if (leftclick == 0) {
+                $(".menu_control").css({
+                    left: 0
+                });
+                leftclick = 1;
+            } else {
+                $(".menu_control").css({
+                    left: -100 + '%'
+                });
+                leftclick = 0;
+            }
+
+        }
+    );
+});
+
+})
+</script>
+
+</html>

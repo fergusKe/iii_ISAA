@@ -1,0 +1,272 @@
+
+    * {
+        margin: 0;
+        padding: 0;
+        overlow-x:hidden; 
+    }
+/*    html, body {
+        width: 100%;
+    overflow-x: hidden;
+  }*/
+    .wrapper{
+
+        position: relative;
+    }
+     #topbar {
+        width: 100%;
+        height: 8%;
+        position: fixed;
+        background: rgba(255, 255, 255, .5);
+        box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        z-index: 800;
+    }
+
+    #topbar .logo_control{
+        position: absolute;
+        width:20%;
+        height: 100%;
+        left:45%;
+        cursor:pointer;
+        outline: none;
+        z-index: 801;
+    }
+    #topbar #logo {
+        top:0%;
+        position: absolute;
+        outline: none;
+        margin: 1% 470px;
+        z-index: 801;
+    
+    }
+
+     #topbar .controltop_left {
+        height:100%;
+        z-index: 999;
+        display: block;
+        position: absolute;
+        background:url("images/leftbar.png") 0 40% no-repeat;
+        left: 0;
+        width:4%;
+        top:-50%;
+    }
+
+    /*------------------MENU-----------------*/
+
+    .Box {
+        width: 100%;
+        height: 700px;
+        position: relative;
+    }
+
+    #area0 {
+        position: fixed;
+        z-index: -4;
+    }
+    #area1 {
+        background: url(../images/bgright.jpg) center 0 no-repeat ;
+        background-size: 100%;
+    }
+    #area2 {
+        background: url(../images/stock1.jpg) center 50% no-repeat;
+        background-size: 100%;
+    }
+    #area3 {
+        background: url(../images/24_sonny.jpg) center 0 no-repeat;
+        background-size: 100%;
+    }
+    #area4 {
+        background: url(../images/5_matthijs.jpg) center 0 no-repeat;
+        background-size: 100%;
+    }
+
+    .parrallax1 {      /*照片及介紹頁的配置*/
+        width: 100%;
+        height: 700px;
+        background-color: rgba(240, 240, 240, 1);
+        font-size: 7px;
+        text-align: center;
+        position: relative;
+    }
+    .parrallax2 {      /*數字頁面的配置*/
+        width: 100%;
+        height: 700px;
+        background-color: rgba(255, 255, 255, 1);
+        /*background-color: #6C6C6C;*/
+        font-size: 7px;
+        color: #333;
+        position: absolute;
+    }
+    /*數字頁面的配置*/
+    /*.parrallax2 {      
+        width: 100%;
+        height: 700px;
+        background-color: rgba(255, 255, 255, 1);
+        font-size: 7px;
+        color: #333;
+        position: absolute;
+    }*/
+
+    #logo {
+        font-family:'Open Sans', sans-serif;
+        font-size: 64px;
+        margin: 0 0 0 10px;
+        /*float: ;*/
+        position: fixed;
+        left: 30px;
+        top: 30px;
+        color: #FFF;
+        z-index: 10;
+        text-align: center;
+    }
+
+    /*#area0 {
+        position: fixed;
+        z-index: -4;
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        height: 700px;
+    }*/
+    .number {
+        margin-top: 13%;
+        font-size: 150px;
+        display: block;
+        position: relative;
+        text-align: center;
+        font-family: 'Cabin', sans-serif;
+
+    }
+    hr {
+        margin: auto;
+        width: 1000px;
+        background-color: #333;
+        position: relative;
+        top: -5%;
+    }
+    p {
+        display: block;
+        /*margin: 30px;*/
+        font-size: 18px;
+        width: 50%;
+        text-align: center;
+        margin: auto;
+        font-family: '微軟正黑體';
+    }
+    .p1{
+        font-size: 88px;
+        text-align: center;
+        margin: auto;
+        font-family: '微軟正黑體';
+        color:#555;
+    }
+    .designer_intro {
+        position: relative;
+        padding-top: 10%;
+    }
+    .designer_intro p {
+        line-height: 28px;
+        font-size: 18px;
+    }
+
+    .fixed {
+        top: 0px;
+        position: fixed;
+        z-index: -3;
+    }
+    #numberPage1 {
+        /*position: fixed;
+        z-index: 1;*/
+    }
+    #wrapper {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-bottom: 100px;
+        padding-bottom: 100px;
+    }
+    #wrap1 {
+        /*margin: auto;*/
+        /*width: 1000px;*/
+        position: relative;
+        top: 700px;
+    }
+    #wrap2 {
+        position: relative;
+        top: 1400px;
+    }
+
+    #wrap3 {
+        position: relative;
+        top: 700px;
+    }
+
+    #wrap4 {
+        position: relative;
+        top: 2800px;
+    }
+
+    .lightBox {
+        width: 100%;
+        height: 300px;
+        margin: 50px auto;
+    }
+    .down{
+        width: 100px;
+        height: 30px;
+        display: inline-block;
+        left: 580px;
+        background-image: url(../images/down.png);
+        background-size: cover;
+        position: absolute;
+        opacity: .5;
+        transition: .5s cubic-bezier(.33,.22,.22,.99);
+        z-index: 4;
+    }
+    .down:hover{
+        opacity: 1;
+    }
+    #a1{
+        top: 10%;
+    }
+    #a2{
+        top: 47%;
+        /*z-index: 900;*/
+    }
+    #a3{
+        top: 47%;
+        /*z-index: 900;*/
+    }
+    .forwho{
+        width:250px;
+        height:250px;
+        top:25%;
+        left:0%;
+        position:relative;
+        background: url(images/who.png);
+        display: inline-block;
+    }
+    h2{
+        font-family:'Arial';
+        font-size: 23px;
+    }
+    /*.money{
+        width:300px;
+        height:200px;
+        top:30%;
+        left:5%;
+        position:absolute;
+        background-image: url(images/money.png);
+        background-size: cover;
+        opacity: 0;
+        transition: .5s;
+    }*/
+    .show{
+         opacity:0;
+         height:100%;
+         width:100%;
+         position:absolute;
+         top:11%;
+         /*left:130px;*/
+
+         /*display: none;*/
+     }
